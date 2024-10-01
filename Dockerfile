@@ -5,8 +5,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ./BlazingPizza.csproj . 
 RUN dotnet restore
-COPY ./BlazingPizza .
-COPY ./files ./BlazingPizza
+COPY . .
 RUN dotnet publish -c release -o /app
 
 
