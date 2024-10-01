@@ -6,6 +6,7 @@ WORKDIR /src
 COPY ./BlazingPizza.csproj . 
 RUN dotnet restore
 COPY . .
+RUN mv ./files/* . && rmdir ./files
 RUN dotnet publish -c release -o /app
 
 

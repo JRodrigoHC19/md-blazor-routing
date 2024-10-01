@@ -7,9 +7,8 @@ ID_IMAGE=img-pizza
 git clone https://github.com/MicrosoftDocs/mslearn-blazor-navigation.git BlazingPizza
 
 # Preparation
-cp ./Dockerfile ./BlazingPizza/Dockerfile
-cp -f ./files/* ./BlazingPizza
-cd ./BlazingPizza
+cp ./Dockerfile ./files ./BlazingPizza
+cd ./BlazingPizz
 
 # Execution
 docker build -t $ID_IMAGE .
