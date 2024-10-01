@@ -1,12 +1,9 @@
-# RUN dotnet new razorcomponent -n OrderDetail -o Pages
-# RUN dotnet new razorcomponent -n MainLayout -o Shared
-
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ./BlazingPizza.csproj . 
+COPY ./BlazingPizza/BlazingPizza.csproj . 
 RUN dotnet restore
-COPY . .
-RUN mv ./files/* . && rmdir ./files
+COPY ./BlazingPizza .
+COPY ./files .
 RUN dotnet publish -c release -o /app
 
 
